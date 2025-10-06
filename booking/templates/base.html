@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> House Booking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'booking/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🏖️ House Booking</h1>
+    </header>
+    <nav>
+        <a href="{% url 'house_list' %}">Home</a>
+        {% if user.is_authenticated %}
+            <span style="margin-left:2em;">Welcome, {{ user.username }}! <a href="/admin/logout/">Logout</a></span>
+        {% else %}
+            <a href="/admin/login/">Login</a> |
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        &copy; {{ now|date:'Y' }} House Booking. All rights reserved.
+    </footer>
+</body>
+</html>

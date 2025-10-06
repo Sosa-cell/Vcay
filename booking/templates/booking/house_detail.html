@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{{ house.name }}</h1>
+  <p>{{ house.description }}</p>
+  <h2>Bookings</h2>
+  <ul>
+    {% for booking in bookings %}
+      <li>{{ booking.start_date }} to {{ booking.end_date }} by {{ booking.user.username }}</li>
+    {% empty %}
+      <li>No bookings yet.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'book_house' house.id %}">Book this house</a>
+  <br><a href="{% url 'house_list' %}">Back to list</a>
+{% endblock %}

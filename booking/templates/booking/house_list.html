@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1> Houses</h1>
+  <div class="house-list">
+    {% for house in houses %}
+      <div class="house-card">
+        <h2>{{ house.name }}</h2>
+        <p>{{ house.description }}</p>
+        <a href="{% url 'house_detail' house.id %}">View &amp; Book</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

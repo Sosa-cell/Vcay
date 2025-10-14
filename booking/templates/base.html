@@ -13,7 +13,12 @@
     <nav>
         <a href="{% url 'house_list' %}">Home</a>
         {% if user.is_authenticated %}
-            <span style="margin-left:2em;">Welcome, {{ user.username }}! <a href="/admin/logout/">Logout</a></span>
+            <span style="margin-left:2em;">Welcome, {{ user.username }}!
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background:none;border:none;color:#5C4634;cursor:pointer;text-decoration:underline;padding:0;margin-left:0.5em;">Logout</button>
+                </form>
+            </span>
         {% else %}
             <a href="/admin/login/">Login</a> |
             <a href="{% url 'register' %}">Register</a>

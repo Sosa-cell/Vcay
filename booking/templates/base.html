@@ -39,7 +39,8 @@
         {% block content %}{% endblock %}
     </div>
     <footer>
-        &copy; {{ now|date:'Y' }} House of Aaron. All rights reserved.
+        &copy; {{ now|date:'Y' }} House of Aaron. All rights reserved.<br>
+        Current time: {{ now|date:'D, M d, Y H:i:s' }}
     </footer>
     {% block extra_js %}{% endblock %}
 </body>

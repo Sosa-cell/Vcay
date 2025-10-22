@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{{ house.name }}</h1>
+  <p>{{ house.description }}</p>
+  <h2>Bookings</h2>
+  <div class="booking-list">
+    {% for booking in bookings %}
+      <div class="booking-card">
+        <span class="booking-icon"><i class="fi fi-sr-calendar"></i></span>
+        <span class="booking-dates">{{ booking.start_date }} &rarr; {{ booking.end_date }}</span>
+        <span class="booking-user"><i class="fi fi-sr-user"></i> {{ booking.user.username }}</span>
+      </div>
+    {% empty %}
+      <div class="booking-card booking-empty">No bookings yet.</div>
+    {% endfor %}
+  </div>
+  <a href="{% url 'book_house' house.id %}">Book this house</a>
+  <br><a href="{% url 'house_list' %}">Back to list</a>
+{% endblock %}
+{% block extra_js %}
+  {% if request.GET.confetti %}
+    <script>
+      confetti({
+        particleCount: 120,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    </script>
+  {% endif %}
+{% endblock %}

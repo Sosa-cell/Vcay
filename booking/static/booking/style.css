@@ -1,0 +1,215 @@
+/* Booking list styles */
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    margin: 1.5em 0 2em 0;
+}
+.booking-card {
+    background: linear-gradient(90deg, #F0E4D3 60%, #FFD6E0 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(220,197,178,0.10);
+    padding: 1em 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+    font-size: 1.08em;
+    font-weight: 500;
+    color: #5C4634;
+    border: 1.5px solid #DCC5B2;
+    transition: box-shadow 0.18s, transform 0.18s;
+}
+.booking-card:hover {
+    box-shadow: 0 8px 32px rgba(240,228,211,0.13);
+    transform: scale(1.03);
+}
+.booking-icon {
+    font-size: 1.3em;
+    color: #5C4634;
+    margin-right: 0.5em;
+}
+.booking-dates {
+    background: #FAF7F3;
+    padding: 0.3em 0.8em;
+    border-radius: 8px;
+    margin-right: 0.7em;
+    font-size: 1em;
+}
+.booking-user {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    background: #D9EAFD;
+    padding: 0.3em 0.8em;
+    border-radius: 8px;
+    font-size: 1em;
+}
+.booking-empty {
+    background: #FFD6E0;
+    color: #5C4634;
+    font-style: italic;
+    text-align: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+/* ...existing code... */
+    font-family: 'Fredoka', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #F8FAFC 0%, #D9EAFD 40%, #BCCCDC 70%, #F0E4D3 90%, #FFD6E0 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #5C4634;
+    background-attachment: fixed;
+}
+
+header {
+    background: #F0E4D3;
+    color: #5C4634;
+    padding: 2em 0 1.2em 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(220,197,178,0.08);
+    letter-spacing: 2px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+nav {
+    margin: 1.5em 0 0.5em 0;
+    text-align: center;
+}
+nav a {
+    color: #5C4634;
+    background: #DCC5B2;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    border: 1.5px solid #F0E4D3;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+}
+nav a:hover {
+    background: #F0E4D3;
+    color: #5C4634;
+    border: 1.5px solid #DCC5B2;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2.5em auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(220,197,178,0.06);
+    padding: 2.5em 2.5em 2em 2.5em;
+}
+
+h1, h2 {
+    font-family: 'Fredoka', 'Segoe UI', Arial, sans-serif;
+    color: #5C4634;
+    margin-top: 0;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.house-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    justify-content: center;
+    margin: 2em 0 1em 0;
+}
+.house-card {
+    background: #F0E4D3;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(220,197,178,0.06);
+    padding: 2em 2em 1.5em 2em;
+    width: 280px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: 1.5px solid #DCC5B2;
+}
+.house-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(240,228,211,0.13);
+    border-color: #DCC5B2;
+}
+.house-card h2 {
+    margin: 0 0 0.5em 0;
+    color: #5C4634;
+    font-size: 1.3em;
+}
+.house-card p {
+    color: #5C4634;
+    margin-bottom: 1.2em;
+    font-size: 1.05em;
+}
+.house-card a {
+    align-self: flex-end;
+    background: #DCC5B2;
+    color: #5C4634;
+    padding: 0.5em 1.2em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(220,197,178,0.08);
+    border: 1.5px solid #DCC5B2;
+}
+.house-card a:hover {
+    background: #FAF7F3;
+    color: #5C4634;
+    border: 1.5px solid #DCC5B2;
+}
+
+button, input[type="submit"] {
+    background: #DCC5B2;
+    color: #5C4634;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6em 1.4em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 0.5em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(220,197,178,0.08);
+    border: 1.5px solid #DCC5B2;
+    transition: background 0.2s, color 0.2s, transform 0.18s, box-shadow 0.18s;
+    position: relative;
+    overflow: hidden;
+}
+button:hover, input[type="submit"]:hover {
+    background: #F0E4D3;
+    color: #5C4634;
+    border: 1.5px solid #DCC5B2;
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 6px 24px rgba(220,197,178,0.18);
+}
+button:active, input[type="submit"]:active {
+    transform: scale(0.97) rotate(1deg);
+    box-shadow: 0 1px 4px rgba(220,197,178,0.10);
+}
+
+form label {
+    display: block;
+    margin: 1em 0 0.5em 0;
+}
+
+.errorlist, .error {
+    color: #5C4634;
+    margin-bottom: 1em;
+}
+
+footer {
+    text-align: center;
+    color: #5C4634;
+    margin: 2em 0 1em 0;
+    font-size: 1.05em;
+    letter-spacing: 1px;
+    background: none;
+    text-shadow: none;
+}

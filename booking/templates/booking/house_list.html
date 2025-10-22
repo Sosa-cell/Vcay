@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1> Houses</h1>
+  <div class="house-list">
+    {% for house in houses %}
+      <div class="house-card">
+        <h2>
+          {% if forloop.counter0 == 0 %}
+            <i class="fi fi-sr-cabin"></i>
+          {% elif forloop.counter0 == 1 %}
+            <i class="fi fi-sr-palm"></i>
+          {% elif forloop.counter0 == 2 %}
+            <i class="fi fi-sr-sun"></i>
+          {% elif forloop.counter0 == 3 %}
+            <i class="fi fi-sr-wave"></i>
+          {% else %}
+            <i class="fi fi-sr-umbrella-beach"></i>
+          {% endif %}
+          {{ house.name }}
+        </h2>
+        <p>{{ house.description }}</p>
+        <a href="{% url 'house_detail' house.id %}">View &amp; Book</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

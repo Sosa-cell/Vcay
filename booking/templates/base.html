@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House of Aaron</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'booking/style.css' %}">
+    <!-- Flaticon CDN for fun icons -->
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <!-- Confetti JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Pikaday Calendar CSS/JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+</head>
+<body>
+    <header>
+        <h1><i class="fi fi-sr-umbrella-beach"></i> House of Aaron</h1>
+    </header>
+    <nav>
+        <a href="{% url 'house_list' %}">Home</a>
+        {% if user.is_authenticated %}
+            <span style="margin-left:2em;">
+                <span style="vertical-align:middle;display:inline-block;margin-right:0.5em;">
+                  <i class="fi fi-sr-user" style="font-size:1.3em;color:#5C4634;background:#F0E4D3;border-radius:50%;padding:0.2em;"></i>
+                </span>
+                Welcome, {{ user.username }}!
+                <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background:none;border:none;color:#5C4634;cursor:pointer;text-decoration:underline;padding:0;margin-left:0.5em;">Logout</button>
+                </form>
+            </span>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a> |
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        &copy; {{ now|date:'Y' }} House of Aaron. All rights reserved.
+    </footer>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
